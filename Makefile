@@ -16,6 +16,8 @@ fetch:
 process:
 	tar -xvzf odoo_${ODOO_VERSION}.latest.tar.gz
 	mv odoo-13.0.*/odoo/* .
+	mv odoo-13.0.*/README.md .
+	mv odoo-13.0.*/requirements.txt .
 
 flush:
 	rm -f odoo_${ODOO_VERSION}.latest.tar.gz
@@ -23,4 +25,4 @@ flush:
 
 clean:
 	find . -mindepth 1 -maxdepth 1 -type d -exec rm -Rf {} +
-	find . ! -name 'Makefile' ! -name '.*' -type f -exec rm -f {} +
+	find . ! -name 'Makefile' ! -name 'README.md' ! -name 'requirements.txt' ! -name '.*' -type f -exec rm -f {} +
