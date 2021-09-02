@@ -24,5 +24,5 @@ flush:
 	rm -Rf odoo-13.0.*
 
 clean:
-	find . -mindepth 1 -maxdepth 1 -type d -exec rm -Rf {} +
-	find . ! -name 'Makefile' ! -name 'README.md' ! -name 'requirements.txt' ! -name '.*' -type f -exec rm -f {} +
+	find . -mindepth 1 -maxdepth 1 -type d ! -name '.*' -exec rm -Rf {} +
+	find . -mindepth 1 -maxdepth 1 -type f ! -name '.*' ! -name 'Makefile' ! -name 'README.md' ! -name 'requirements.txt' -exec rm -f {} +
